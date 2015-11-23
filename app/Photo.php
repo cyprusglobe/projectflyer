@@ -17,6 +17,6 @@ class Photo extends Model
      */
     public function flyer()
     {
-       return $this->belongsTo('App\Flyer');
+        return $this->belongsTo('App\Flyer');
     }
 }
