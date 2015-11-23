@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Flyer;
 use Illuminate\Http\Request;
+use App\Http\Requests\FlyerRequest;
 
 class FlyersController extends Controller
 {
@@ -30,12 +32,16 @@ class FlyersController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param FlyerRequest|Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FlyerRequest $request)
     {
-        //
+        Flyer::create($request->all());
+
+        // flash messaging
+
+        return redirect()->back(); //temporary
     }
 
     /**
