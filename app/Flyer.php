@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Flyer extends Model
 {
-
     /**
      * A flyer is composed of many photos.
      *
@@ -15,6 +14,5 @@ class Flyer extends Model
     public function photos()
     {
         return $this->hasMany('App\Photo');
-
     }
 }
