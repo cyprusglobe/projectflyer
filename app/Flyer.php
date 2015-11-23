@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Flyer extends Model
 {
-
     /**
      * Fillable fields for a flyer.
      *
@@ -19,7 +18,7 @@ class Flyer extends Model
         'country',
         'zip',
         'price',
-        'description'
+        'description',
     ];
 
     /**
