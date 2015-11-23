@@ -8,6 +8,8 @@
 <div class="form-group">
     <label for="City">City:</label>
     <input type="text" name="City" id="City" class="form-control" value="{{ old('City') }}">
+    <label for="city">City:</label>
+    <input type="text" name="city" id="city" class="form-control" value="{{ old('city') }}">
 </div>
 
 <div class="form-group">
