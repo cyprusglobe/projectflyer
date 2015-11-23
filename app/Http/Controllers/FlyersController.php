@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Flyer;
 use Illuminate\Http\Request;
-
 use App\Http\Requests\FlyerRequest;
-
 
 class FlyersController extends Controller
 {

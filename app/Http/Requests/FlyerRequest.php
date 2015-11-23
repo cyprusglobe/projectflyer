@@ -2,8 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Requests\Request;
-
 class FlyerRequest extends Request
 {
     /**
@@ -30,7 +28,7 @@ class FlyerRequest extends Request
             'country' => 'required',
             'state' => 'required',
             'price' => 'required|integer',
-            'description' => 'required'
+            'description' => 'required',
         ];
     }
 }
