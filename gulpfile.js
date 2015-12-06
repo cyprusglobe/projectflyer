@@ -1,4 +1,7 @@
 var elixir = require('laravel-elixir');
+var bootstrap = require('bootstrap-styl');
+
+require('laravel-elixir-stylus');
 
 /*
  |--------------------------------------------------------------------------
@@ -12,5 +15,21 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss');
+    mix
+        .copy(
+            'node_modules/sweetalert/dist/sweetalert-dev.js',
+            'resources/assets/js/sweetalert-dev.js'
+        )
+        .copy(
+            'node_modules/sweetalert/dist/sweetalert.css',
+            'resources/assets/css/sweetalert.css'
+        )
+        .stylus('app.styl', './public/css/app.css', { use: [ bootstrap() ], 'include css': true })
+        .scripts([
+            'sweetalert-dev.js'
+        ], './public/js/libs.js');
+
+    mix.browserSync({
+        proxy: 'projectflyer.dev'
+    });
 });
