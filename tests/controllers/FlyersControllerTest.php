@@ -8,6 +8,7 @@ class FlyersControllerTest extends TestCase
      *
      * @return void
      */
+
     /** @test */
     public function it_shows_the_form_to_create_a_new_flyer()
     {

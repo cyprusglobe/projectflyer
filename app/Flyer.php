@@ -21,7 +21,6 @@ class Flyer extends Model
         'description',
     ];
 
-
     /**
      * Scope query to those located at a given address.
      *
@@ -44,7 +43,7 @@ class Flyer extends Model
      */
     public function getPriceAttribute($price)
     {
-        return '$' . number_format($price);
+        return '$'.number_format($price);
     }
 
     /**
