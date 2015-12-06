@@ -32,4 +32,6 @@ elixir(function(mix) {
     mix.browserSync({
         proxy: 'projectflyer.dev'
     });
+
+    mix.phpUnit();
 });
