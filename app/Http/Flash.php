@@ -1,8 +1,9 @@
-<?php namespace App\Http;
+<?php
+
+namespace App\Http;
 
 class Flash
 {
-
     /**
      * Create a flash message.
      *
@@ -17,11 +18,9 @@ class Flash
         return session()->flash($key, [
             'title' => $title,
             'message' => $message,
-            'level' => $level
+            'level' => $level,
         ]);
-
     }
-
 
     /**
      * Create an information flash message.
@@ -32,9 +31,8 @@ class Flash
      */
     public function info($title, $message)
     {
-       return $this->create($title, $message, 'info');
+        return $this->create($title, $message, 'info');
     }
-
 
     /**
      * Create a success flash message.
@@ -72,5 +70,4 @@ class Flash
     {
         return $this->create($title, $message, $level, 'flash_message_overlay');
     }
-
 }
