@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Project Flyer</title>
     <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/libs.css">
 </head>
 <body>
 

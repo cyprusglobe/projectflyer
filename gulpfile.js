@@ -24,7 +24,8 @@ elixir(function(mix) {
             'node_modules/sweetalert/dist/sweetalert.css',
             'resources/assets/css/sweetalert.css'
         )
-        .stylus('app.styl', './public/css/app.css', { use: [ bootstrap() ], 'include css': true })
+        .stylus('app.styl', './public/css/app.css')
+        .stylus('libs.styl', './public/css/libs.css', { use: [ bootstrap() ], 'include css': true })
         .scripts([
             'sweetalert-dev.js'
         ], './public/js/libs.js');
