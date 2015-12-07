@@ -22,28 +22,40 @@ class Flyer extends Model
     ];
 
     /**
-     * Scope query to those located at a given address.
+     * Find the flyer at the given address.
      *
-     * @param $query
      * @param $zip
      * @param $street
      * @return mixed
      */
-    public function scopeLocatedAt($query, $zip, $street)
+    public static function locatedAt($zip, $street)
     {
         $street = str_replace('-', ' ', $street);
 
-        return $query->where(compact('zip', 'strret'));
+        return static::where(compact('zip', 'strret'))->first();
     }
 
     /**
      * Attribute to format a give price.
+     *
      * @param $price
      * @return string
      */
     public function getPriceAttribute($price)
     {
         return '$'.number_format($price);
+    }
+
+
+    /**
+     * Add Photo to the referenced flyer.
+     *
+     * @param Photo $photo
+     * @return Model
+     */
+    public function addPhoto(Photo $photo)
+    {
+        return $this->photos()->save($photo);
     }
 
     /**

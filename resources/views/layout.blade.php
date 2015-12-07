@@ -29,12 +29,15 @@
     </div>
 </nav>
 
-<script src="/js/libs.js"></script>
-
-@include('flash')
-
 <div class="container">
     @yield('content')
 </div>
+
+<script src="/js/libs.js"></script>
+
+@yield('scripts.footer')
+
+@include('flash')
+
 </body>
 </html>
