@@ -46,7 +46,6 @@ class Flyer extends Model
         return '$'.number_format($price);
     }
 
-
     /**
      * Add Photo to the referenced flyer.
      *
