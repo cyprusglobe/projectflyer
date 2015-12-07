@@ -13,7 +13,6 @@ class Photo extends Model
 
     protected $baseDir = 'flyers/photos';
 
-
     /**
      * A photo is owned by a flyer.
      *
@@ -33,7 +32,7 @@ class Photo extends Model
     {
         $photo = new static;
 
-        $name = time(). $file->getClientOriginalName();
+        $name = time().$file->getClientOriginalName();
 
         $photo->path = $photo->baseDir.'/'.$name;
 

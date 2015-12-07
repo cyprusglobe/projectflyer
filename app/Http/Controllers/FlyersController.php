@@ -60,7 +60,6 @@ class FlyersController extends Controller
         return view('flyers.show', compact('flyer'));
     }
 
-
     /**
      * Apply a photo to the referenced flyer.
      *
@@ -72,7 +71,7 @@ class FlyersController extends Controller
     public function addPhoto($zip, $street, Request $request)
     {
         $this->validate($request, [
-            'photo' => 'required|mimes:jpg,jpeg,png,bmp'
+            'photo' => 'required|mimes:jpg,jpeg,png,bmp',
         ]);
 
         $photo = Photo::fromForm($request->file('photo'));
