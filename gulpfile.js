@@ -24,10 +24,19 @@ elixir(function(mix) {
             'node_modules/sweetalert/dist/sweetalert.css',
             'resources/assets/css/sweetalert.css'
         )
+        .copy(
+            'node_modules/dropzone/dist/dropzone.js',
+            'resources/assets/js/dropzone.js'
+        )
+        .copy(
+            'node_modules/dropzone/dist/dropzone.css',
+            'resources/assets/css/dropzone.css'
+        )
         .stylus('app.styl', './public/css/app.css')
         .stylus('libs.styl', './public/css/libs.css', { use: [ bootstrap() ], 'include css': true })
         .scripts([
-            'sweetalert-dev.js'
+            'sweetalert-dev.js',
+            'dropzone.js'
         ], './public/js/libs.js');
 
     mix.browserSync({
