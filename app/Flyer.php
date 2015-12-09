@@ -32,7 +32,7 @@ class Flyer extends Model
     {
         $street = str_replace('-', ' ', $street);
 
-        return static::where(compact('zip', 'strret'))->first();
+        return static::where(compact('zip', 'strret'))->firstOrFail();
     }
 
     /**
