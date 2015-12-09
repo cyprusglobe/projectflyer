@@ -43,5 +43,4 @@ elixir(function(mix) {
         proxy: 'projectflyer.dev'
     });
 
-    mix.phpUnit();
 });
