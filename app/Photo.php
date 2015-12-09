@@ -33,9 +33,8 @@ class Photo extends Model
     {
         $photo = new static;
 
-         return (new static)->saveAs($name);
+        return (new static)->saveAs($name);
     }
-
 
     /**
      * @param $name
@@ -43,9 +42,9 @@ class Photo extends Model
      */
     public function saveAs($name)
     {
-         $this->name = sprintf('%s-%s', time(), $name);
-         $this->path = sprintf('%s/%s', $this->baseDir, $this->name);
-         $this->thumbnail_path = sprintf('%s/tn-%s', $this->baseDir, $this->name);
+        $this->name = sprintf('%s-%s', time(), $name);
+        $this->path = sprintf('%s/%s', $this->baseDir, $this->name);
+        $this->thumbnail_path = sprintf('%s/tn-%s', $this->baseDir, $this->name);
 
         return $this;
     }
