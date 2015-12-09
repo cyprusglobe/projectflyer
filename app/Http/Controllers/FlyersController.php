@@ -11,6 +11,14 @@ use Illuminate\Http\Response;
 class FlyersController extends Controller
 {
     /**
+     * Create a new flyer controller instance.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return Response
