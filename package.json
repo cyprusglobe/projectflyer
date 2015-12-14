@@ -9,6 +9,7 @@
     "bootstrap-styl": "^5.0.4",
     "dropzone": "^4.2.0",
     "laravel-elixir": "^4.0.4",
+    "lity": "^1.5.0",
     "sweetalert": "^1.1.3"
   }
 }
