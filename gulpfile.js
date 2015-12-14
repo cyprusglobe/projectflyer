@@ -17,6 +17,10 @@ require('laravel-elixir-stylus');
 elixir(function(mix) {
     mix
         .copy(
+            'node_modules/jquery/dist/jquery.js',
+            'resources/assets/js/jquery.js'
+        )
+        .copy(
             'node_modules/sweetalert/dist/sweetalert-dev.js',
             'resources/assets/js/sweetalert-dev.js'
         )
@@ -32,11 +36,23 @@ elixir(function(mix) {
             'node_modules/dropzone/dist/dropzone.css',
             'resources/assets/css/dropzone.css'
         )
+        .copy(
+            'node_modules/lity/dist/lity.js',
+            'resources/assets/js/lity.js'
+        )
+        .copy(
+            'node_modules/lity/dist/lity.css',
+            'resources/assets/css/lity.css'
+        )
+
         .stylus('app.styl', './public/css/app.css')
         .stylus('libs.styl', './public/css/libs.css', { use: [ bootstrap() ], 'include css': true })
         .scripts([
+            'jquery.js',
             'sweetalert-dev.js',
-            'dropzone.js'
+            'dropzone.js',
+            'lity.js'
+
         ], './public/js/libs.js');
 
     mix.browserSync({
