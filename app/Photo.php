@@ -28,11 +28,10 @@ class Photo extends Model
 
     /**
      * When a photo is created, prepare a thumbnail, too.
-     *
      */
     protected static function boot()
     {
-        static::creating( function ($photo) {
+        static::creating(function ($photo) {
             return $photo->upload();
         });
     }
@@ -62,7 +61,7 @@ class Photo extends Model
         return $photo->fill([
             'name' => $photo->fileName(),
             'path' => $photo->filePath(),
-            'thumbnail_path' => $photo->thumbnailPath()
+            'thumbnail_path' => $photo->thumbnailPath(),
         ]);
     }
 
@@ -73,7 +72,7 @@ class Photo extends Model
     public function fileName()
     {
         $name = sha1(
-            time() . $this->file->getClientOriginalName()
+            time().$this->file->getClientOriginalName()
         );
 
         $extension = $this->file->getClientOriginalExtension();
@@ -88,7 +87,7 @@ class Photo extends Model
      */
     public function filePath()
     {
-        return $this->baseDir() . '/' . $this->fileName();
+        return $this->baseDir().'/'.$this->fileName();
     }
 
     /**
@@ -98,7 +97,7 @@ class Photo extends Model
      */
     public function thumbnailPath()
     {
-        return $this->baseDir() . '/tn-' . $this->fileName();
+        return $this->baseDir().'/tn-'.$this->fileName();
     }
 
     /**
@@ -110,7 +109,6 @@ class Photo extends Model
     {
         return 'images/photos';
     }
-
 
     /**
      * Move the photo to the proper folder.
