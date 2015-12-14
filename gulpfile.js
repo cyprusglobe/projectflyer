@@ -40,7 +40,9 @@ elixir(function(mix) {
         ], './public/js/libs.js');
 
     mix.browserSync({
-        proxy: 'projectflyer.dev'
+        proxy: 'projectflyer.dev',
+        notify: false,
+        online: true
     });
 
 });
