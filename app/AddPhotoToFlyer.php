@@ -4,7 +4,6 @@ namespace App;
 
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
-
 class AddPhotoToFlyer
 {
     /**
@@ -36,7 +35,6 @@ class AddPhotoToFlyer
 
     /**
      * Process the form.
-     *
      */
     public function save()
     {
@@ -65,7 +63,7 @@ class AddPhotoToFlyer
     protected function makeFileName()
     {
         $name = sha1(
-            time() . $this->file->getClientOriginalName()
+            time().$this->file->getClientOriginalName()
         );
 
         $extension = $this->file->getClientOriginalExtension();
