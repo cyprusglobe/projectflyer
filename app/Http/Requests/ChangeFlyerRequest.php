@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use App\Flyer;
-use App\Http\Requests\Request;
 
 class ChangeFlyerRequest extends Request
 {
@@ -17,7 +16,7 @@ class ChangeFlyerRequest extends Request
         return Flyer::where([
             'zip' => $this->zip,
             'street' => $this->street,
-            'user_id' => $this->user()->id
+            'user_id' => $this->user()->id,
         ])->exists();
     }
 
@@ -29,7 +28,7 @@ class ChangeFlyerRequest extends Request
     public function rules()
     {
         return [
-            'photo' => 'required|mimes:jpg,jpeg,png,bmp'
+            'photo' => 'required|mimes:jpg,jpeg,png,bmp',
         ];
     }
 }
