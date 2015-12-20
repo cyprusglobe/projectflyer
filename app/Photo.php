@@ -53,7 +53,7 @@ class Photo extends Model
     {
         \File::delete([
             $this->path,
-            $this->thumbnail_path
+            $this->thumbnail_path,
         ]);
 
         parent::delete();
