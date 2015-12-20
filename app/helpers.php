@@ -30,17 +30,17 @@ function flyer_path(App\Flyer $flyer)
 }
 
 /**
- * Link to
+ * Link to.
  */
 function link_to($body, $path, $type)
 {
     $csrf = csrf_field();
 
     if (is_object($path)) {
-        $action = '/' . $path->getTable();
+        $action = '/'.$path->getTable();
 
         if (in_array($type, ['PUT', 'PATCH', 'DELETE'])) {
-            $action .= '/' . $path->getKey();
+            $action .= '/'.$path->getKey();
         }
     } else {
         $action = $path;
@@ -53,5 +53,4 @@ function link_to($body, $path, $type)
             <button type="submit">{$body}</button>
         </form>
 EOT;
-
 }
