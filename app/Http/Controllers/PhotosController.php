@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Photo;
 use App\Flyer;
 use App\AddPhotoToFlyer;
 use App\Http\Requests\AddPhotoRequest;
@@ -23,5 +24,16 @@ class PhotosController extends Controller
         $photo = $request->file('photo');
 
         (new AddPhotoToFlyer($flyer, $photo))->save();
+    }
+
+    /**
+     * Delete a photo belonging to a flyer.
+     * @param $id
+     */
+    public function destory($id)
+    {
+        Photo::findOrFail($id)->delete();
+
+        return back();
     }
 }
